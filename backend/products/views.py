@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Category, Product
+from .serializers import CategorySerializer, ProductSerializer
 
-# Create your views here.
+class CategoryViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows categories to be viewed or edited.
+    """
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class ProductViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows products to be viewed or edited.
+    """
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
