@@ -2,7 +2,7 @@ import { useFetch } from "../../Custom_Hooks/useFetch";
 import Product from "../components/Product";
 
 // const url = import.meta.env.VITE_API_URL;
-const url = "https://fakestoreapi.com/products";
+const url = "http://127.0.0.1:8000/api/products/";
 
 function ProductsPage() {
   const { data: products, loading, error } = useFetch(url);
