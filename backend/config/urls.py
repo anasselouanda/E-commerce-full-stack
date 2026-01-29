@@ -15,7 +15,10 @@ router.register('categories', CategoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    # AJOUTE CES DEUX LIGNES OBLIGATOIRES POUR LA SÉCURITÉ 
+    path('api/auth/', include('djoser.urls')),       # Pour s'inscrire
+    path('api/auth/', include('djoser.urls.jwt')),   # Pour se connecter (Token)
 ]
 
 
